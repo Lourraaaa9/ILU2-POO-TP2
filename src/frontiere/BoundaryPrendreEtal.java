@@ -13,7 +13,7 @@ public class BoundaryPrendreEtal {
 		if (!controlPrendreEtal.verifierIdentite(nomVendeur)) {
 			StringBuilder message=new StringBuilder("Je suis désolée ");
 			message.append(nomVendeur);
-			message.append(" mais il faut être un habitant de notre village pour commencer ici.");
+			message.append(" mais il faut être un habitant de notre village pour commercer ici.");
 			System.out.println(message.toString());
 		}
 		else {

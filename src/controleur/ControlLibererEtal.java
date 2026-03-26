@@ -11,7 +11,6 @@ public class ControlLibererEtal {
 		this.controlTrouverEtalVendeur = controlTrouverEtalVendeur;
 	}
 
-	//TODO a completer
 
 	/**
 	 * 
@@ -26,9 +25,12 @@ public class ControlLibererEtal {
 	public String[] libererEtal(String nomVendeur) {
 		String[] donneesEtal = new String[5];
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
-		StringBuilder info= new StringBuilder();
-		info.append(etal.isEtalOccupe());
-		donneesEtal[0]=info.toString();
+		if (etal==null) {
+			donneesEtal[0]="false";
+			return donneesEtal;
+		}
+
+		donneesEtal[0]="true";
 		String[] donnees=etal.etatEtal();
 		for (int i=0;i<4;i++) {
 			donneesEtal[i+1]=donnees[i];
