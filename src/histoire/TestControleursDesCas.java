@@ -175,8 +175,7 @@ public class TestControleursDesCas {
 		ControlAcheterProduit controlAcheterProduit = new ControlAcheterProduit(
 				controlVerifierIdentite, controlTrouverEtalVendeur, village);
 		System.out.println("Obelix a 3 menhir sur son etal");
-		int nbProduitAcheter = controlAcheterProduit.acheterProduit("Obelix",
-				2);
+		int nbProduitAcheter = controlAcheterProduit.acheterProduit("Obelix",2);
 		System.out.println("Achat de " + nbProduitAcheter + " menhirs sur 2");
 		nbProduitAcheter = controlAcheterProduit.acheterProduit("Obelix", 3);
 		System.out.println("Achat de " + nbProduitAcheter + " menhirs sur 3");

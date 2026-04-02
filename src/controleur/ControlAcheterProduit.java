@@ -1,8 +1,8 @@
 package controleur;
 
+import villagegaulois.*;
 import personnages.Gaulois;
-import villagegaulois.Etal;
-import villagegaulois.Village;
+
 
 public class ControlAcheterProduit {
 	private Village village;
@@ -10,33 +10,35 @@ public class ControlAcheterProduit {
 	private ControlVerifierIdentite controlVerifierIdentite;
 
 	public ControlAcheterProduit(ControlVerifierIdentite controlVerifierIdentite,
-			ControlTrouverEtalVendeur controlTrouverEtalVendeur, Village village) {
+			ControlTrouverEtalVendeur controlTrouverEtalVendeur,
+			Village village) {
 		this.village = village;
 		this.controlVerifierIdentite = controlVerifierIdentite;
 		this.controlTrouverEtalVendeur = controlTrouverEtalVendeur;
 	}
-
-	public boolean verifierIdentite(String nomVendeur) {
-		return controlVerifierIdentite.verifierIdentite(nomVendeur);
-	}
-
-	public Etal trouverEtal(String nomVendeur) {
-		return controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
-	}
-
-	public Gaulois[] rechercherVendeursProduit(String produit)  {
-		return village.rechercherVendeursProduit(produit);
-	}
+	
 	
 	public int acheterProduit(String nomGaulois, int quantite) {
 		Gaulois gaulois=village.trouverHabitant(nomGaulois);
 		Etal etal = village.rechercherEtal(gaulois);
-		etal.acheterProduit(quantite);
-		return quantite;
+		return etal.acheterProduit(quantite);
 	}
 	
-	public String getNom(Gaulois gaulois) {
-		return gaulois.getNom();
+	public String[] recherchervendeurs(String produit) {
+		Gaulois[] vendeurs= village.rechercherVendeursProduit(produit);
+		String[] vendeursString=new String[vendeurs.length];
+		for(int i=0;i<vendeurs.length;i++) {
+			vendeursString[i]=vendeurs[i].getNom();
+		}
+		return vendeursString;
 	}
 	
+	public boolean verifierIdentite(String nomVendeur) {
+		return controlVerifierIdentite.verifierIdentite(nomVendeur);
+	}
+	
+	public int nbProduitRestant(String nomVendeur) {
+		Etal etal=controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+		return etal.getQuantite();
+	}
 }

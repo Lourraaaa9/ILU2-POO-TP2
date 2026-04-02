@@ -45,7 +45,7 @@ public class BoundaryPrendreEtal {
 			StringBuilder messageInstallation=new StringBuilder("Le vendeur ");
 			messageInstallation.append(nomVendeur);
 			messageInstallation.append(" s'est installé à l'étal n° ");
-			messageInstallation.append(numeroEtal +1);
+			messageInstallation.append(numeroEtal);
 			System.out.println(messageInstallation.toString());
 		}
 	}
