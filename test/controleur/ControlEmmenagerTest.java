@@ -22,17 +22,24 @@ class ControlEmmenagerTest {
 	
 	@Test
 	void testControlEmmenager() {
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager=new ControlEmmenager(village);
+		assertNotNull(controlEmmenager,"Constructeur ne renvoie pas null");
 	}
 
 	@Test
 	void testIsHabitant() {
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager=new ControlEmmenager(village);
+		controlEmmenager.ajouterGaulois("Bonnemine",10);
+		assertTrue(controlEmmenager.isHabitant("Bonnemine"));
+		assertFalse(controlEmmenager.isHabitant("Existe pas"));
+		controlEmmenager.ajouterDruide("Panoramix",10,1,5);
+		assertTrue(controlEmmenager.isHabitant("Panoramix"));
 	}
 
 	@Test
 	void testAjouterDruide() {
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager=new ControlEmmenager(village);
+		controlEmmenager.ajouterDruide("Panoramix",10,1,5);
 	}
 
 	@Test
