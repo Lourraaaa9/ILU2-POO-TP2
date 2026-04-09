@@ -127,7 +127,10 @@ public class TestControleursDesCas {
 			System.out.println(string);
 		}
 		String[] ventesIntrus = controlLibererEtal.libererEtal("Intrus");
-		System.out.println("Les ventes d'Intrus : " + ventesIntrus);
+		System.out.println("Les ventes d'Intrus : ");
+		for (String string : ventesIntrus) {
+			System.out.println(string);
+		}
 		
 
 //		Sortie Console :
