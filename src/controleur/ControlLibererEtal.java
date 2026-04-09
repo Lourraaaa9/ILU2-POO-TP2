@@ -1,6 +1,6 @@
 package controleur;
 
-import controleur.ControlTrouverEtalVendeur;
+//import controleur.ControlTrouverEtalVendeur;
 import villagegaulois.Etal;
 
 public class ControlLibererEtal {
