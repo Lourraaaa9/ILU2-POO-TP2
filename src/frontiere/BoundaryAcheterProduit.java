@@ -38,7 +38,7 @@ public class BoundaryAcheterProduit {
 	}
 	
 	private String identifierVendeur(String produit) {
-		String[] vendeurs=controlAcheterProduit.recherchervendeurs(produit);
+		String[] vendeurs=controlAcheterProduit.rechercherVendeurs(produit);
 		if(vendeurs.length!=0) {
 			StringBuilder message=new StringBuilder("Chez quel commerçant voulez-vous acheter des ");
 			message.append(produit);

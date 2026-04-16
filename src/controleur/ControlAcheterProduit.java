@@ -24,8 +24,12 @@ public class ControlAcheterProduit {
 		return etal.acheterProduit(quantite);
 	}
 	
-	public String[] recherchervendeurs(String produit) {
+	public String[] rechercherVendeurs(String produit) {
 		Gaulois[] vendeurs= village.rechercherVendeursProduit(produit);
+		if(vendeurs==null) {
+			String[] pasDeVendeur = new String[0];
+			return pasDeVendeur;
+		}
 		String[] vendeursString=new String[vendeurs.length];
 		for(int i=0;i<vendeurs.length;i++) {
 			vendeursString[i]=vendeurs[i].getNom();
