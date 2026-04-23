@@ -19,6 +19,7 @@ public class BoundaryLibererEtal {
 				chaine.append(donneesEtal[4]);
 				chaine.append(" sur ");
 				chaine.append(donneesEtal[3]);
+				chaine.append(" ");
 				chaine.append(donneesEtal[2]);
 				chaine.append(".");
 				System.out.println(chaine.toString());
